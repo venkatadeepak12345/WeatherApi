@@ -1,14 +1,17 @@
-import React from 'react'
+import React from 'react';
 
-const App = () => {
+function WeatherApp() {
+  const API_KEY = 'YOUR_KEY_HERE'; // ✅ Declare here, not inside return
+
+  const query = "London"; // example query
+  const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}`;
+
   return (
-    <div>Lets Create Weather-App using OpenWeatherAPI</div>
-
-     const API_KEY = 'YOUR KEY SEE VIDEO TO GET IT';
-
-    // `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}` //API GEO LOCATION API
-    // `https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&appid=${API_KEY}&units=metric` // API CURRENT WEATHER
-  )
+    <div>
+      Lets Create Weather-App using OpenWeatherAPI
+      <p>{geoApiUrl}</p> {/* ✅ You can safely use variables inside JSX like this */}
+    </div>
+  );
 }
 
-export default App
+export default WeatherApp;
